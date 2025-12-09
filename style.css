@@ -1,0 +1,249 @@
+<link rel="stylesheet" href="style.css">
+/* ========================================================= */
+/* 1. 全局设置 (Global Settings) - 提升专业感 */
+/* ========================================================= */
+
+:root {
+    /* 科技感深色主题配色 */
+    --color-background: #121212; /* 深灰/黑背景 */
+    --color-text-primary: #f0f0f0; /* 浅色主文本 */
+    --color-accent: #00bcd4; /* 强调色：科技蓝/青色 */
+    --color-secondary: #aaaaaa; /* 次要文本 */
+    --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --spacing-large: 80px;
+    --spacing-medium: 40px;
+}
+
+* {
+    box-sizing: border-box; /* 确保 padding 不会增加元素总宽度 */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    scroll-behavior: smooth; /* 平滑滚动 */
+}
+
+/* 标题样式 */
+h1, h2, h3, h4 {
+    color: var(--color-text-primary);
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+
+h1 { font-size: 3em; }
+h2 { font-size: 2em; border-bottom: 2px solid var(--color-accent); padding-bottom: 5px; }
+
+/* 链接样式 */
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4fffd4; /* 悬停颜色 */
+}
+
+
+/* ========================================================= */
+/* 2. 导航栏 (Navigation) - 实现固定吸顶效果 */
+/* ========================================================= */
+
+.navbar {
+    position: fixed; /* 固定在视口顶部 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(18, 18, 18, 0.95); /* 半透明背景，略微遮盖内容 */
+    padding: 15px var(--spacing-medium);
+    z-index: 1000; /* 确保导航栏位于最上层 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: var(--color-text-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* 确保页面内容不被固定导航栏遮挡 */
+section:first-of-type { 
+    padding-top: 100px; /* 留出导航栏高度 */
+}
+
+
+/* ========================================================= */
+/* 3. 通用区块样式 (Section Styling) - 增加留白 */
+/* ========================================================= */
+
+section {
+    padding: var(--spacing-large) var(--spacing-medium); /* 统一上下留白 */
+    max-width: 1200px;
+    margin: 0 auto; /* 居中显示内容 */
+}
+
+/* 英雄区 (Hero Section) - 增强视觉冲击力 */
+#home {
+    min-height: 80vh; /* 至少占据视口高度的 80% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* 内容左对齐 */
+    text-align: left;
+}
+
+#home h1 {
+    font-size: 4em;
+    color: var(--color-accent);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* 添加科技感光晕 */
+}
+
+.hero-cta-buttons a {
+    display: inline-block;
+    padding: 10px 25px;
+    margin-right: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.hero-cta-buttons a:first-child {
+    background-color: var(--color-accent); /* 主 CTA 按钮 */
+    color: var(--color-background);
+}
+
+.hero-cta-buttons a:first-child:hover {
+    background-color: #0097a7;
+}
+
+
+/* ========================================================= */
+/* 4. 作品集/画廊 (Gallery) - 采用响应式网格布局 */
+/* ========================================================= */
+
+.gallery-grid {
+    display: grid;
+    /* 在大屏幕上显示 3 列，小屏幕上自动调整 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; /* 网格间距 */
+    margin-top: 50px;
+}
+
+.gallery-item {
+    background-color: #222; /* 卡片背景色 */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* 悬停微抬效果 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* 假设您的 HTML 结构中，每个产品图片是放在 .gallery-item 里的一个图片占位符 */
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* 固定高度，保持一致 */
+    object-fit: cover;
+}
+
+.item-details {
+    padding: 15px;
+}
+
+.item-details h4 {
+    margin-bottom: 5px;
+    color: var(--color-accent);
+}
+
+.item-details .price {
+    color: var(--color-secondary);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+
+/* ========================================================= */
+/* 5. 表单与页脚 (Form & Footer) */
+/* ========================================================= */
+
+#contact-form input, #contact-form textarea, #contact-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    background-color: #1e1e1e;
+    color: var(--color-text-primary);
+    border-radius: 4px;
+    font-family: var(--font-primary);
+}
+
+#contact-form button {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #0097a7;
+}
+
+footer {
+    text-align: center;
+    padding: 30px var(--spacing-medium);
+    border-top: 1px solid #333;
+    color: var(--color-secondary);
+    font-size: 0.9em;
+}
+
+/* 媒体查询：适配小屏幕设备（手机）*/
+@media (max-width: 768px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.5em; }
+    
+    .navbar {
+        padding: 10px 20px;
+    }
+    
+    .nav-links {
+        display: none; /* 移动端隐藏导航链接，通常需要一个汉堡包菜单 */
+    }
+    
+    .hero-cta-buttons a {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    section {
+        padding: var(--spacing-medium) 20px;
+    }
+}
