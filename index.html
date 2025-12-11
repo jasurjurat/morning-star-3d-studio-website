@@ -23,7 +23,6 @@
         
         /* Subtle Background Gradient Overlay for Hero */
         .hero-bg {
-            /* 替换背景图片为纯色+渐变，避免外部依赖 */
             background-color: var(--color-bg-dark);
             background-image: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.15) 50%, transparent 100%);
         }
@@ -53,7 +52,7 @@
             }
         }
 
-        /* 通用图片占位符样式，使其在无图时保持美观 */
+        /* 通用图片占位符样式（仅用于无文件的卡片）*/
         .img-placeholder-text {
             color: #94A3B8; /* Slate-400 */
             font-size: 1.125rem;
@@ -182,10 +181,10 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-20">
 
                 <div class="bg-slate-800 rounded-xl overflow-hidden shadow-xl card-glow">
-                    <div class="h-48 w-full bg-slate-700 flex items-center justify-center img-placeholder-text">
-                        <p class="text-white font-bold text-center p-2 text-sm md:text-base">
-                            DIY Custom RGB Night Light 3D Model
-                        </p>
+                    <div class="h-48 w-full bg-slate-700 flex items-center justify-center">
+                        <img class="h-full w-full object-cover" 
+                            src="night-stand-light-02.png" 
+                            alt="DIY Custom RGB Night Light 3D Model">
                     </div>
                     <div class="p-6">
                         <h4 class="text-2xl font-semibold mb-2 text-slate-100">DIY Custom RGB Night Light</h4>
@@ -203,10 +202,10 @@
                 </div>
 
                 <div class="bg-slate-800 rounded-xl overflow-hidden shadow-xl card-glow">
-                    <div class="h-48 w-full bg-slate-700 flex items-center justify-center img-placeholder-text">
-                        <p class="text-white font-bold text-center p-2 text-sm md:text-base">
-                            Magnetic Levitation Jesus Statue
-                        </p>
+                    <div class="h-48 w-full bg-slate-700 flex items-center justify-center">
+                        <img class="h-full w-full object-cover" 
+                            src="Two-tone-Coaster" 
+                            alt="Magnetic Levitation Jesus Statue">
                     </div>
                     <div class="p-6">
                         <h4 class="text-2xl font-semibold mb-2 text-slate-100">Magnetic Levitation Jesus Statue</h4>
@@ -224,10 +223,10 @@
                 </div>
 
                 <div class="bg-slate-800 rounded-xl overflow-hidden shadow-xl card-glow">
-                    <div class="h-48 w-full bg-slate-700 flex items-center justify-center img-placeholder-text">
-                        <p class="text-white font-bold text-center p-2 text-sm md:text-base">
-                            Holographic Cute Character Box
-                        </p>
+                    <div class="h-48 w-full bg-slate-700 flex items-center justify-center">
+                        <img class="h-full w-full object-cover" 
+                            src="arctic-rgb-light-gpt-1" 
+                            alt="Holographic Cute Character Box">
                     </div>
                     <div class="p-6">
                         <h4 class="text-2xl font-semibold mb-2 text-slate-100">Holographic Cute Character Box</h4>
@@ -245,10 +244,10 @@
                 </div>
                 
                 <div class="bg-slate-800 rounded-xl overflow-hidden shadow-xl card-glow">
-                    <div class="h-48 w-full bg-slate-700 flex items-center justify-center img-placeholder-text">
-                        <p class="text-white font-bold text-center p-2 text-sm md:text-base">
-                            The Sentinel Figure Miniature
-                        </p>
+                    <div class="h-48 w-full bg-slate-700 flex items-center justify-center">
+                        <img class="h-full w-full object-cover" 
+                            src="customized-vape" 
+                            alt="The Sentinel Figure Miniature">
                     </div>
                     <div class="p-6">
                         <h4 class="text-2xl font-semibold mb-2 text-slate-100">The Sentinel Figure</h4>
@@ -266,7 +265,7 @@
                 <div class="bg-slate-800 rounded-xl overflow-hidden shadow-xl card-glow">
                     <div class="h-48 bg-slate-700 flex items-center justify-center img-placeholder-text">
                         <p class="text-white font-bold text-center p-2 text-sm md:text-base">
-                            Architectural Model Image
+                            Architectural Model Image Placeholder
                         </p>
                     </div>
                     <div class="p-6">
@@ -293,10 +292,10 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
                 <div class="bg-slate-800 rounded-xl overflow-hidden shadow-xl card-glow">
-                    <div class="h-48 bg-slate-700 flex items-center justify-center img-placeholder-text">
-                        <p class="text-white font-bold text-center p-2 text-sm md:text-base">
-                            Custom Engraved Logo Sign
-                        </p>
+                    <div class="h-48 bg-slate-700 flex items-center justify-center">
+                        <img class="h-full w-full object-cover" 
+                            src="black-cross-belt" 
+                            alt="Custom Engraved Logo Sign">
                     </div>
                     <div class="p-6">
                         <h4 class="text-2xl font-semibold mb-2 text-slate-100">Custom Engraved Logo Sign</h4>
@@ -316,7 +315,7 @@
                 <div class="bg-slate-800 rounded-xl overflow-hidden shadow-xl card-glow">
                     <div class="h-48 bg-slate-700 flex items-center justify-center img-placeholder-text">
                         <p class="text-white font-bold text-center p-2 text-sm md:text-base">
-                            Personalized Engraved Keychain
+                            Personalized Engraved Keychain Image Placeholder
                         </p>
                     </div>
                     <div class="p-6">
@@ -337,7 +336,7 @@
                 <div class="bg-slate-800 rounded-xl overflow-hidden shadow-xl card-glow">
                     <div class="h-48 bg-slate-700 flex items-center justify-center img-placeholder-text">
                         <p class="text-white font-bold text-center p-2 text-sm md:text-base">
-                            Laser-Cut Templates/Gaskets
+                            Laser-Cut Templates/Gaskets Image Placeholder
                         </p>
                     </div>
                     <div class="p-6">
